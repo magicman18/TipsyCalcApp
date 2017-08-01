@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,20 +58,20 @@
                                             <action selector="billAmountWasChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="s95-8y-kQE"/>
                                         </connections>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bmu-rh-4dM">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bmu-rh-4dM">
                                         <rect key="frame" x="0.0" y="90" width="315" height="62"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiR-CG-vnK">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="62"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip: " textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiR-CG-vnK">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="62"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="3HT-ka-Bwj"/>
+                                                    <constraint firstAttribute="width" constant="70" id="3HT-ka-Bwj"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
                                                 <color key="textColor" red="0.32156862745098036" green="0.67843137254901964" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.10000000000000001" maxValue="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="R7V-eg-gI5">
-                                                <rect key="frame" x="48" y="0.0" width="269" height="63"/>
+                                                <rect key="frame" x="78" y="0.0" width="239" height="63"/>
                                                 <connections>
                                                     <action selector="tipPercentageDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="66n-2M-rH8"/>
                                                 </connections>
@@ -137,14 +138,35 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n51-At-dpp">
+                                <rect key="frame" x="30" y="381" width="315" height="57"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3-Way Split:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYy-Zz-0gT">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="57"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="8mf-QG-LTW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                        <color key="textColor" red="0.32156862749999998" green="0.67843137249999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="izK-l9-IzE">
+                                        <rect key="frame" x="108" y="0.0" width="209" height="58"/>
+                                    </slider>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="n51-At-dpp" secondAttribute="trailing" constant="14" id="10E-RB-UKo"/>
                             <constraint firstItem="mzg-MS-pQa" firstAttribute="top" secondItem="kdQ-18-SaH" secondAttribute="bottom" constant="30" id="4Sc-xq-Ff8"/>
+                            <constraint firstItem="n51-At-dpp" firstAttribute="top" secondItem="mzg-MS-pQa" secondAttribute="bottom" constant="39" id="9KO-8g-8H9"/>
+                            <constraint firstItem="n51-At-dpp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="14" id="Web-WX-aIZ"/>
                             <constraint firstAttribute="trailing" secondItem="kdQ-18-SaH" secondAttribute="trailing" id="bdK-I1-R7I"/>
                             <constraint firstItem="kdQ-18-SaH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ctI-hd-Mfc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mzg-MS-pQa" secondAttribute="bottom" constant="325" id="fgD-15-bUf"/>
                             <constraint firstAttribute="trailing" secondItem="mzg-MS-pQa" secondAttribute="trailing" constant="30" id="g3r-wo-vXc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n51-At-dpp" secondAttribute="bottom" constant="229" id="iRE-KZ-fQB"/>
                             <constraint firstItem="kdQ-18-SaH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jqk-8I-WUy"/>
                             <constraint firstItem="mzg-MS-pQa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="nf0-55-xBi"/>
                         </constraints>
